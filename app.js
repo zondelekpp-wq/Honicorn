@@ -107,7 +107,6 @@ const TOOLS={};
 function show(id){
   if(curTool&&TOOLS[curTool].stop)TOOLS[curTool].stop();curTool=null;
   if(cur==='cool'&&id!=='cool')Cool.stop();
-  if('speechSynthesis' in window)speechSynthesis.cancel();
   $$('.screen').forEach(s=>s.classList.toggle('on',s.id===id));cur=id;window.scrollTo(0,0);
   $('#roast').classList.remove('on');
   if(id==='home')updChip();
@@ -327,9 +326,28 @@ const Insult=TOOLS.insult=(()=>{let txt='',bound=false,deck=[],lang=null,prev=nu
     if(prev)for(let m=deck.length-1;m>=Math.max(0,deck.length-20);m--){if(deck[m][0]!==prev[0]&&deck[m][1]!==prev[1]){k=m;break}}
     const [i,j]=deck.splice(k,1)[0];prev=[i,j];if(!ends.length)ends=shuffle([...p.s.keys()]);return p.f(p.a[i],p.n[j],p.s[ends.pop()])}
   function gen(){txt=next();const e=$('#insTxt');e.textContent=txt;e.animate([{transform:'scale(.6) rotate(-5deg)',opacity:0},{transform:'scale(1.08) rotate(1deg)',opacity:1},{transform:'scale(1)'}],{duration:420,easing:'ease-out'});SFX.pop();poke();comment('insult',.4)}
-  function say(){poke();if(!('speechSynthesis' in window))return;const u=new SpeechSynthesisUtterance(txt);u.lang=SPEECH[S.lang];u.rate=1.05;u.pitch=.8;const v=speechSynthesis.getVoices().find(v=>(v.lang||'').toLowerCase().startsWith(S.lang));if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);$('#insTxt').animate([{transform:'scale(1)'},{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:500});comment('insult',.5)}
+  /* user shouts the insult; voice tension meter */
+  let stream=null,an=null,buf=null,listening=false,raf=0,samples=[],voiced=false,quietT=0,t0=0,lastF=0,best=0;
+  async function shout(){poke();if(listening)return finish();try{rawAC()}catch(e){}
+    try{stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});const A=rawAC();const src=A.createMediaStreamSource(stream);an=A.createAnalyser();an.fftSize=1024;buf=new Float32Array(an.fftSize);src.connect(an)}
+    catch(e){toast(t('micDenied').split('–')[0]);return}
+    listening=true;samples=[];voiced=false;quietT=0;t0=lastF=performance.now();
+    const b=$('#insSay');b.textContent=t('shoutNow');b.classList.add('hot');$('#insMeter').hidden=false;$('#insLbl').textContent='';raf=requestAnimationFrame(loop)}
+  function lvl(){an.getFloatTimeDomainData(buf);let s=0;for(let i=0;i<buf.length;i++)s+=buf[i]*buf[i];const db=20*Math.log10(Math.sqrt(s/buf.length)+1e-7);return Math.max(0,Math.min(1,(db+52)/44))}
+  function loop(now){if(!listening)return;const dt=(now-lastF)/1000;lastF=now;const v=lvl();samples.push(v);if(v>.38){voiced=true;poke()}
+    if(voiced&&v<.25)quietT+=dt;else quietT=0;
+    const p=Math.round(v*100);$('#insBar').style.width=p+'%';$('#insPct').textContent=p+'%';
+    $('#insTxt').style.transform=`scale(${1+v*.18}) rotate(${(Math.random()-.5)*v*7}deg)`;
+    if((voiced&&quietT>1.1)||now-t0>7000)return finish();raf=requestAnimationFrame(loop)}
+  function release(){if(stream){stream.getTracks().forEach(x=>x.stop());stream=null}an=null}
+  function finish(){listening=false;cancelAnimationFrame(raf);release();$('#insTxt').style.transform='';const b=$('#insSay');b.textContent=t('insShout');b.classList.remove('hot');
+    const s=samples.sort((x,y)=>y-x),peak=s[0]||0,top=s.slice(0,Math.max(1,s.length/4|0)),avg=top.reduce((x,y)=>x+y,0)/top.length;
+    const score=voiced?Math.round(100*Math.min(1,.65*peak+.35*avg)):Math.round(peak*60);best=Math.max(best,score);
+    $('#insBar').style.width=score+'%';$('#insPct').textContent=score+'%';$('#insLbl').textContent=`${t('tl')[Math.min(4,score/20|0)]} · ${t('peak')}: ${best}%`;
+    if(score>=70){SFX.fanfare();buzz([60,30,120]);flash()}else SFX.pop();
+    if(S.comments){const mode=S.mean?'mean':'nice',m=comDraw(mode,score<40?'shoutLow':score<70?'shoutMid':'shoutHigh');if(m){lastCom=Date.now();showCom(m,mode)}}}
   function copy(){poke();(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>toast(t('copied'))).catch(()=>{})}
-  return{start(){if(!bound){bound=true;$('#insNew').onclick=gen;$('#insSay').onclick=say;$('#insCopy').onclick=copy}$('#insSay').hidden=!('speechSynthesis' in window);gen()},stop(){}}})();
+  return{start(){if(!bound){bound=true;$('#insNew').onclick=gen;$('#insSay').onclick=shout;$('#insCopy').onclick=copy}$('#insSay').hidden=!navigator.mediaDevices;$('#insMeter').hidden=true;gen()},stop(){if(listening){listening=false;cancelAnimationFrame(raf);$('#insTxt').style.transform='';$('#insSay').classList.remove('hot');$('#insSay').textContent=t('insShout')}release()}}})();
 
 /* ================= VOLCANO ================= */
 const Volcano=TOOLS.volcano=(()=>{let cv,g,run=false,raf,last,pr=0,parts=[],smoke=[],n=0,shakeV=0;
