@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Honicorn</title>
+<meta name="description" content="Blow off steam. Safely. Ridiculously.">
+<meta name="theme-color" content="#1e1533">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- © 2026 Piotr Żondełek. All rights reserved. -->
+<style>
+:root{--bg:#1e1533;--bg2:#2b1f47;--card:#362a55;--line:#4a3b6e;--tx:#f7f0fb;--mut:#bfb2d6;--a1:#ff6b5b;--a2:#26c6b0;--a3:#ffb347;--a4:#a77bf3;--hh:58px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+body{min-height:100dvh;background:radial-gradient(120% 60% at 50% -10%,var(--bg2),var(--bg) 70%) fixed;overscroll-behavior:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+h1,h2,h3{margin:0;line-height:1.15}
+[hidden]{display:none!important}
+header{position:sticky;top:0;z-index:20;height:calc(var(--hh) + env(safe-area-inset-top));padding:env(safe-area-inset-top) 12px 0;display:flex;align-items:center;justify-content:space-between;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .4s}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:19px;letter-spacing:.3px}
+.brand img{width:34px;height:34px;border-radius:9px}
+.hbtns{display:flex;gap:6px}
+.ib{width:44px;height:44px;border-radius:14px;background:var(--card);font-size:22px;display:grid;place-items:center;border:1px solid var(--line)}
+body.mean header{box-shadow:0 0 0 2px var(--a1),0 6px 28px -6px var(--a1)}
+body.mean #meanBtn{background:var(--a1);animation:wob 2.4s infinite}
+@keyframes wob{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(-12deg)}96%{transform:rotate(12deg)}}
+main{max-width:640px;margin:0 auto;padding:16px 16px calc(24px + env(safe-area-inset-bottom))}
+.screen{display:none;animation:in .25s ease-out}
+.screen.on{display:block}
+.screen.tool.on{display:flex;flex-direction:column;height:calc(100dvh - var(--hh) - env(safe-area-inset-top) - 40px - env(safe-area-inset-bottom));min-height:480px}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.hero{text-align:center;padding:10px 0 4px}
+.heroIcon{width:110px;height:110px;border-radius:28px;box-shadow:0 12px 40px -10px var(--a1);animation:steam 3s ease-in-out infinite}
+@keyframes steam{50%{transform:translateY(-4px) rotate(-2deg)}}
+.hero h1{font-size:34px;margin-top:10px;background:linear-gradient(90deg,var(--a3),var(--a1),var(--a4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);margin:6px 0 0}
+h2{font-size:20px;margin:22px 0 12px}
+.center{text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:10px 18px;border-radius:16px;background:var(--a2);color:#10131a;font-weight:700;border:0;transition:transform .1s}
+.btn:active{transform:scale(.96)}
+.btn.big{width:100%;min-height:58px;font-size:19px;margin-top:16px}
+.btn.hot{background:linear-gradient(135deg,var(--a1),var(--a3));color:#1a0f12;box-shadow:0 10px 30px -10px var(--a1)}
+.btn.ghost{background:var(--card);color:var(--tx);border:1px solid var(--line)}
+.btn.sm{min-height:38px;padding:6px 12px;font-size:14px;border-radius:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:132px;position:relative;overflow:hidden;transition:transform .12s}
+.card:active{transform:scale(.97)}
+.card .em{font-size:34px}
+.card b{font-size:16px}
+.card small{color:var(--mut);font-size:13px;line-height:1.3}
+.card::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--c);opacity:.22}
+.chip{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin-top:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-top:26px;color:var(--mut);font-size:14px}
+.foot button{color:var(--mut);text-decoration:underline;text-underline-offset:3px;padding:6px 2px}
+.th{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.th h2{margin:4px 0 8px}
+.stat{color:var(--mut);font-size:14px}.stat b{color:var(--a3);font-size:18px}
+.cv{flex:1;width:100%;min-height:260px;border-radius:22px;background:var(--bg2);border:1px solid var(--line);touch-action:none;user-select:none;-webkit-user-select:none;display:block}
+.hint{color:var(--mut);text-align:center;margin:8px 0 4px;font-size:14px}
+.tb{display:flex;gap:10px;margin-top:8px}.tb .btn{flex:1;font-size:15px;line-height:1.2}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.mut{color:var(--mut)}.small{font-size:13px}
+/* meter */
+.q{font-size:18px;margin:4px 0 10px}
+.gauge{margin:14px auto;width:220px;height:220px;border-radius:50%;display:grid;place-items:center;align-content:center;gap:0;background:radial-gradient(circle,var(--card) 58%,transparent 59%),conic-gradient(var(--mc) calc(var(--mp)*1%),var(--line) 0);transition:background .2s}
+#mFace{font-size:58px;line-height:1}#mNum{font-size:40px;font-weight:800;color:var(--mc)}#mLbl{color:var(--mut);font-weight:600}
+input[type=range]{width:100%;height:44px;accent-color:var(--a1)}
+.scale{display:flex;justify-content:space-between;color:var(--mut);font-size:13px;margin-top:-6px}
+/* scream */
+#screamMsg{min-height:20px}
+/* crush */
+textarea{width:100%;min-height:150px;resize:vertical;border-radius:18px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);padding:14px;font:inherit;font-size:17px}
+textarea:focus{outline:2px solid var(--a2)}
+.rec{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--a1);margin-right:6px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.2}}
+.stage{position:relative;flex:1;min-height:340px;border-radius:22px;background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+.paper{position:absolute;left:50%;top:40%;width:min(78%,280px);min-height:150px;max-height:220px;overflow:hidden;padding:16px;background:#fffdf4;color:#3b3245;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.35);font-family:"Comic Sans MS","Chalkboard SE","Segoe Print",cursive;font-size:16px;transform:translate(-50%,-50%);background-image:repeating-linear-gradient(transparent 0 27px,#d9e4f5 27px 28px);word-break:break-word}
+.ball{position:absolute;left:50%;top:40%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0,#f1ecdc 30%,#d4ccb4 62%,#a99f86 100%);box-shadow:inset -10px -12px 20px rgba(0,0,0,.25),0 8px 18px rgba(0,0,0,.35);z-index:3}
+.ball::after{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 20deg,transparent 0 22deg,rgba(90,80,60,.28) 22deg 24deg)}
+.prop{position:absolute;line-height:1;z-index:2;pointer-events:none}
+.dest{position:absolute;left:0;right:0;bottom:0;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px;z-index:5}
+.dest .btn{background:var(--card);color:var(--tx);border:1px solid var(--line)}
+.stageMsg{position:absolute;left:12px;right:12px;top:12px;text-align:center;font-weight:700;font-size:18px;z-index:5}
+.shredder{position:absolute;left:50%;width:170px;height:70px;margin-left:-85px;border-radius:14px 14px 8px 8px;background:linear-gradient(#5c5f6e,#353744);z-index:4;box-shadow:0 6px 0 #22232c}
+.shredder::before{content:"";position:absolute;left:18px;right:18px;top:12px;height:8px;border-radius:4px;background:#111}
+.strip{position:absolute;width:7px;height:46px;background:#fffdf4;border-radius:2px;z-index:3}
+.bubble{position:absolute;background:#fff;color:#222;font-weight:800;padding:6px 10px;border-radius:14px;z-index:6;font-size:15px;white-space:nowrap}
+/* insult */
+.insCard{flex:1;display:grid;place-items:center;padding:22px;border-radius:24px;background:linear-gradient(135deg,var(--card),var(--bg2));border:1px solid var(--line);text-align:center;min-height:240px}
+#insTxt{font-size:clamp(24px,6.5vw,36px);font-weight:800;line-height:1.2;color:var(--a3)}
+/* cool */
+#cool .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.breathBox{width:260px;height:260px;display:grid;place-items:center;margin:16px 0}
+#breath{width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 40% 35%,var(--a2),color-mix(in srgb,var(--a2) 35%,var(--bg)) 70%);box-shadow:0 0 60px -10px var(--a2);transform:scale(.55)}
+#breathTxt{font-size:24px;font-weight:700}
+.floor{position:relative;width:100%;height:56px;margin-top:10px;border-bottom:2px dashed var(--line)}
+.crumb{position:absolute;bottom:4px;font-size:16px;transition:opacity .4s,transform .4s}
+#robot{position:absolute;bottom:0;font-size:34px;transform:translateX(-50%);white-space:nowrap}
+/* result */
+.resNums{font-size:56px;font-weight:800;text-align:center;margin:20px 0 6px}
+.resNums .arr{color:var(--mut);font-size:40px;margin:0 10px}
+#resMsg{font-size:19px;text-align:center;margin:8px 0 6px}
+/* settings */
+.set{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+.set h3{font-size:15px;color:var(--mut);margin-bottom:10px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{padding:8px 12px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
+.chips button.on{background:var(--a2);color:#10131a;font-weight:700;border-color:transparent}
+.sw{display:flex;gap:6px;padding:6px;border-radius:14px;border:2px solid transparent;background:var(--bg2)}
+.sw.on{border-color:var(--tx)}
+.sw i{width:22px;height:22px;border-radius:50%;display:block}
+.tg{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
+.tg input{width:52px;height:28px;accent-color:var(--a2)}
+.hist{list-style:none;padding:0;margin:0}
+.hist li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.prose h3{margin:20px 0 6px;color:var(--a3)}.prose p{margin:8px 0;color:var(--tx)}.prose a{color:var(--a2)}
+/* overlays */
+#roast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,160%);width:min(92vw,520px);display:flex;gap:10px;align-items:center;background:#1a1020;border:2px solid var(--a1);border-radius:18px;padding:12px 14px;z-index:50;transition:transform .35s cubic-bezier(.2,1.4,.4,1);box-shadow:0 10px 40px -8px var(--a1)}
+#roast.on{transform:translate(-50%,0)}
+#roast .av{font-size:30px}
+#roast span{font-weight:600}
+#toast{position:fixed;left:50%;top:calc(var(--hh) + 14px + env(safe-area-inset-top));transform:translate(-50%,-20px);opacity:0;background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:14px;font-weight:700;z-index:60;transition:.25s;pointer-events:none;text-align:center;max-width:90vw}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:70;padding:20px}
+#modal .box{background:var(--card);border:2px solid var(--a1);border-radius:22px;padding:22px;max-width:420px;text-align:center}
+#modal .box .big{font-size:54px}
+#flash{position:fixed;inset:0;background:var(--a3);opacity:0;pointer-events:none;z-index:40}
+</style>
+</head>
+<body>
+<header>
+  <button class="brand" data-go="home"><img src="icon.svg" alt=""><span>Honicorn</span></button>
+  <div class="hbtns"><button id="meanBtn" class="ib" aria-label="Mean mode">😇</button><button class="ib" data-go="settings" aria-label="Settings">⚙️</button></div>
+</header>
+<main>
+
+<section id="home" class="screen on">
+  <div class="hero"><img src="icon.svg" class="heroIcon" alt=""><h1>Honicorn</h1><p data-i18n="tagline"></p></div>
+  <div id="sessChip" class="chip" hidden><span><span data-i18n="atStart"></span>: <b id="sessV"></b>/10</span><button class="btn sm" data-go="cool" data-i18n="done"></button></div>
+  <button id="startBtn" class="btn big hot" data-i18n="start"></button>
+  <h2 data-i18n="tools"></h2>
+  <div class="grid" id="grid"></div>
+  <nav class="foot"><button data-go="info" data-i18n="about"></button><button data-go="terms" data-i18n="terms"></button><button data-go="support">☕ <span data-i18n="support"></span></button><button id="shareBtn" data-i18n="share"></button></nav>
+</section>
+
+<section id="meter" class="screen">
+  <h2 class="center" data-i18n="meterTitle"></h2>
+  <p id="meterQ" class="center q"></p>
+  <div class="gauge" id="gauge"><div id="mFace">😐</div><div id="mNum">5</div><div id="mLbl"></div></div>
+  <input type="range" id="mIn" min="1" max="10" step="1" value="5" aria-label="1-10">
+  <div class="scale"><span>1</span><span>10</span></div>
+  <button id="mNext" class="btn big" data-i18n="next"></button>
+</section>
+
+<section id="smash" class="screen tool">
+  <div class="th"><h2 data-i18n="t_smash"></h2><div class="stat"><span data-i18n="destroyed"></span>: <b id="smashN">0</b></div></div>
+  <canvas id="smashCv" class="cv"></canvas>
+  <p class="hint"><span data-i18n="smashHint"></span> <button class="btn sm ghost motionBtn" data-i18n="motion" hidden></button></p>
+  <div class="tb"><button class="btn ghost" data-go="home" data-i18n="back"></button><button class="btn" data-go="cool" data-i18n="done"></button></div>
+</section>
+
+<section id="scream" class="screen tool">
+  <div class="th"><h2 data-i18n="t_scream"></h2><div class="stat"><span data-i18n="towers"></span>: <b id="screamN">0</b> · <span data-i18n="peak"></span>: <b id="screamPk">–</b></div></div>
+  <canvas id="screamCv" class="cv"></canvas>
+  <p class="hint" id="screamMsg"></p>
+  <div class="row" style="margin-top:0"><button id="screamMic" class="btn" style="flex:1" data-i18n="screamStart"></button><button id="screamHold" class="btn ghost" style="flex:1" data-i18n="screamHold"></button></div>
+  <div class="tb"><button class="btn ghost" data-go="home" data-i18n="back"></button><button class="btn" data-go="cool" data-i18n="done"></button></div>
+</section>
+
+<section id="crush" class="screen tool">
+  <div class="th"><h2 data-i18n="t_crush"></h2></div>
+  <div id="crIn" style="flex:1;display:flex;flex-direction:column">
+    <textarea id="crText" data-ph="crushPh"></textarea>
+    <div class="row"><button id="crMic" class="btn ghost"></button><span id="crStatus" class="mut"></span></div>
+    <div id="crVoice" class="chip" hidden><span>🎙️ <span data-i18n="voiceNote"></span> <b id="crVoiceT"></b></span><button id="crVoiceX" class="btn sm ghost">✕</button></div>
+    <button id="crGo" class="btn big hot" data-i18n="crumple"></button>
+    <p class="mut small center" data-i18n="notSaved"></p>
+  </div>
+  <div id="crStage" class="stage" hidden></div>
+  <div class="tb"><button class="btn ghost" data-go="home" data-i18n="back"></button><button class="btn" data-go="cool" data-i18n="done"></button></div>
+</section>
+
+<section id="insult" class="screen tool">
+  <div class="th"><h2 data-i18n="t_insult"></h2></div>
+  <div class="insCard"><div id="insTxt"></div></div>
+  <p class="hint" data-i18n="insHint"></p>
+  <button id="insNew" class="btn hot" style="width:100%" data-i18n="insAnother"></button>
+  <div class="row" style="margin-top:8px"><button id="insSay" class="btn ghost" style="flex:1" data-i18n="insShout"></button><button id="insCopy" class="btn ghost" style="flex:1" data-i18n="insCopy"></button></div>
+  <div class="tb"><button class="btn ghost" data-go="home" data-i18n="back"></button><button class="btn" data-go="cool" data-i18n="done"></button></div>
+</section>
+
+<section id="volcano" class="screen tool">
+  <div class="th"><h2 data-i18n="t_volcano"></h2><div class="stat"><span data-i18n="eruptions"></span>: <b id="volN">0</b></div></div>
+  <canvas id="volCv" class="cv"></canvas>
+  <p class="hint"><span data-i18n="volHint"></span> <button class="btn sm ghost motionBtn" data-i18n="motion" hidden></button></p>
+  <div class="tb"><button class="btn ghost" data-go="home" data-i18n="back"></button><button class="btn" data-go="cool" data-i18n="done"></button></div>
+</section>
+
+<section id="bag" class="screen tool">
+  <div class="th"><h2 data-i18n="t_bag"></h2><div class="stat"><span data-i18n="hits"></span>: <b id="bagN">0</b> · <span data-i18n="power"></span>: <b id="bagP">0%</b></div></div>
+  <canvas id="bagCv" class="cv"></canvas>
+  <p class="hint" data-i18n="bagHint"></p>
+  <div class="tb"><button class="btn ghost" data-go="home" data-i18n="back"></button><button class="btn" data-go="cool" data-i18n="done"></button></div>
+</section>
+
+<section id="cool" class="screen">
+  <div class="wrap">
+    <h2 data-i18n="coolTitle"></h2>
+    <p class="mut" data-i18n="coolSub" style="margin:0"></p>
+    <div class="breathBox"><div id="breath"></div></div>
+    <div id="breathTxt"></div>
+    <div id="coolLeft" class="mut"></div>
+    <p id="coolMean" class="small mut" data-i18n="meanPaused" hidden></p>
+    <div class="floor" id="coolFloor"></div>
+    <button id="coolSkip" class="btn ghost" style="margin-top:14px" data-i18n="skip"></button>
+  </div>
+</section>
+
+<section id="result" class="screen">
+  <h2 class="center" data-i18n="resTitle"></h2>
+  <div class="resNums" id="resNums"></div>
+  <p id="resMsg"></p>
+  <button id="resAgain" class="btn big hot" data-i18n="again2"></button>
+  <button class="btn big ghost" data-go="home" data-i18n="home"></button>
+</section>
+
+<section id="settings" class="screen">
+  <h2 data-i18n="settings"></h2>
+  <div class="set"><h3 data-i18n="language"></h3><div class="chips" id="langs"></div></div>
+  <div class="set"><h3 data-i18n="colours"></h3><div class="chips" id="pals"></div></div>
+  <div class="set">
+    <label class="tg"><span data-i18n="sound"></span><input type="checkbox" id="sndT"></label>
+    <label class="tg"><span data-i18n="vibration"></span><input type="checkbox" id="vibT"></label>
+  </div>
+  <button class="btn big ghost" data-go="history" data-i18n="history"></button>
+  <nav class="foot"><button data-go="info" data-i18n="about"></button><button data-go="terms" data-i18n="terms"></button><button data-go="support">☕ <span data-i18n="support"></span></button></nav>
+</section>
+
+<section id="history" class="screen">
+  <h2 data-i18n="history"></h2>
+  <div id="histSum" class="chip"></div>
+  <ul class="hist" id="histList"></ul>
+  <button id="histClear" class="btn big ghost" data-i18n="clearHist"></button>
+</section>
+
+<section id="info" class="screen"><div class="prose" id="infoBox"></div><button class="btn big ghost" data-go="home" data-i18n="home"></button></section>
+<section id="terms" class="screen"><div class="prose" id="termsBox"></div><button class="btn big ghost" data-go="home" data-i18n="home"></button></section>
+<section id="support" class="screen">
+  <div class="hero"><div style="font-size:72px">☕</div><h2 data-i18n="support"></h2></div>
+  <p id="supText" class="center" style="font-size:17px"></p>
+  <a class="btn big hot" href="https://buymeacoffee.com/Hieronim" target="_blank" rel="noopener" style="text-decoration:none">☕ Buy Me a Coffee</a>
+  <button class="btn big ghost" data-go="home" data-i18n="home"></button>
+</section>
+</main>
+
+<div id="roast" role="status"><div class="av">😈</div><span></span></div>
+<div id="toast" role="status"></div>
+<div id="flash"></div>
+<div id="modal" hidden><div class="box"><div class="big">😈</div><p id="modalTxt" style="font-size:17px"></p><div class="row" style="justify-content:center"><button id="modalNo" class="btn ghost" data-i18n="cancel"></button><button id="modalOk" class="btn hot" data-i18n="ok"></button></div></div></div>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
