@@ -1,5 +1,5 @@
 /* Honicorn service worker – © 2026 Piotr Żondełek */
-const C='honicorn-v1';
+const C='honicorn-v2';
 const F=['./','index.html','app.js','i18n.js','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(F)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});

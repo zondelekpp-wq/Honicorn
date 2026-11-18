@@ -358,7 +358,18 @@ $('#vibT').onchange=e=>{S.vib=e.target.checked;save();if(S.vib)buzz(40)};
 $('#shareBtn').onclick=async()=>{const url=location.href.split('#')[0];try{if(navigator.share){await navigator.share({title:'Honicorn',text:t('shareText'),url});return}}catch(e){if(e&&e.name==='AbortError')return}
   try{await navigator.clipboard.writeText(url);toast(t('linkCopied'))}catch(e){toast(url)}};
 
+/* ================= INSTALL ================= */
+let deferredPrompt=null;
+const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const isInApp=/FBAN|FBAV|FB_IAB|Instagram|Messenger|Line\/|; wv\)|TikTok|Snapchat/i.test(navigator.userAgent);
+function updInstall(){const b=$('#installBtn');b.hidden=isStandalone();if(b.hidden)$('#installHint').hidden=true}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;updInstall()});
+window.addEventListener('appinstalled',()=>{deferredPrompt=null;updInstall();toast('✓ Honicorn')});
+$('#installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();try{await deferredPrompt.userChoice}catch(e){}deferredPrompt=null;return}
+  const h=$('#installHint');h.textContent=t(isInApp?'inAppHint':isIOS?'iosHint':'menuHint');h.hidden=false;h.animate([{opacity:0},{opacity:1}],{duration:300})};
+
 /* ================= INIT ================= */
 $('#sndT').checked=S.sound;$('#vibT').checked=S.vib;
-applyPal();applyI18n();updMean();updChip();
+applyPal();applyI18n();updMean();updChip();updInstall();
 if('serviceWorker' in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('sw.js').catch(()=>{});
