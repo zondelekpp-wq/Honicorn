@@ -24,17 +24,9 @@ coolTitle:"Cool down",inhale:"Breathe in…",exhale:"Breathe out…",coolSub:"Th
 resTitle:"Your result",resDown:"Down by {n}. Nicely done!",resSame:"Same level. Fancy another round or a longer breather?",resUp:"Up by {n}. Happens! Try another tool or a longer breather.",resOnly:"You're at {n}/10 now.",again2:"Another round",
 settings:"Settings",language:"Language",colours:"Colours",sound:"Sound",vibration:"Vibration",history:"History",noHistory:"No sessions yet.",avgDrop:"Average drop",sessions:"Sessions",clearHist:"Clear history",
 about:"About",terms:"Terms & privacy",support:"Buy me a coffee",share:"Share",shareText:"Honicorn – blow off steam, safely and ridiculously.",linkCopied:"Link copied!",
-meanOn:"Mega mean mode ON 😈",meanOff:"Nice mode 😇",meanWarn:"In mega mean mode Honicorn teases you. It's all a joke – switch it off anytime.",ok:"Bring it on",cancel:"Cancel",motion:"📳 Enable shaking",
+meanOn:"Mega mean mode ON 😈",meanOff:"Nice mode 😇",meanWarn:"In mega mean mode Honicorn teases you. It's all a joke – switch it off anytime.",ok:"Bring it on",cancel:"Cancel",motion:"📳 Enable shaking",commentsT:"App comments",
 install:"📲 Install the app",iosHint:"On iPhone: tap Share ⬆️, then “Add to Home Screen”.",menuHint:"Open the browser menu ⋮ and choose “Install app” or “Add to Home screen”.",inAppHint:"Open this page in Chrome or Safari to install it.",
 supportText:"Everything in Honicorn is and will stay free. A coffee is simply voluntary support for the creative process. ☕",
-r:{gen:["Is that all you've got? My calculator gets angrier.","Terrifying. A hamster just laughed at you.","You call that rage? Pudding is scarier.","Keep going. The screen isn't even scared.","Adorable. Now do it like you mean it.","Somewhere a kitten is more intimidating than you.","My last reboot had more passion.","Slow clap. Very, very slow."],
-smash:["The plate survived. Emotionally, at least.","My grandma breaks more dishes by accident."],
-scream:["Was that a scream or a polite sneeze?","The neighbours didn't even notice. Again."],
-crush:["That's your big problem? Cute.","Even the goat says it's a tiny problem."],
-volcano:["That's not a volcano, that's a warm puddle.","Shake harder. It's a phone, not a soufflé."],
-bag:["The bag is yawning.","Are you punching it or patting it?"],
-insult:["Reading insults off a screen. So brave.","Louder. Nobody heard that."],
-idle:"Hello? Did you rage-quit already?",down:"Look at you, all calm. Took you long enough.",same:"Nothing changed. Impressive, in a way. Again?",up:"Angrier than before? Honestly, that's a talent. Round two?"},
 info:`<h3>Why it works</h3>
 <p><b>Naming it.</b> Writing or saying what makes you angry is more than a game. Psychologists call it <i>affect labelling</i>: putting an emotion into words lowers its intensity.</p>
 <p><b>Moving it.</b> Anger is energy in your body. A short burst of tapping, shaking and shouting lets it out – without breaking anything real or hurting anyone.</p>
@@ -59,7 +51,7 @@ termsHtml:`<h3>Terms of use</h3>
 pl:{
 tagline:"Spuść parę. Bezpiecznie. Absurdalnie.",start:"Kipię! Zaczynamy",tools:"Wybierz broń",
 t_smash:"Pokój furii",d_smash:"Tłucz talerze, wazony i biurową drukarkę.",
-t_scream:"Krzykomierz",d_scream:"Wykrzycz się do mikrofonu i zwal wieżę.",
+t_scream:"Krzykomierz",d_scream:"Wykrzycz się do mikrofonu i rozwal wieżę.",
 t_crush:"Zgniatarka problemów",d_crush:"Napisz albo powiedz, co cię wkurza. Potem to zniszcz.",
 t_insult:"Generator obelg",d_insult:"Absurdalne obelgi do wykrzyczenia w eter.",
 t_volcano:"Wulkan",d_volcano:"Potrząsaj, aż wybuchnie.",
@@ -68,7 +60,7 @@ meterTitle:"Wkurzometr",meterBefore:"Jak mocno cię teraz nosi?",meterAfter:"A t
 lv:["Luz","Irytacja","Złość","Furia","Tryb wulkan"],next:"Dalej",
 done:"Gotowe – wycisz mnie",back:"Narzędzia",home:"Start",atStart:"Na starcie",
 smashHint:"Stuknij, żeby rozwalić. Potrząsanie też działa.",destroyed:"Rozbite",
-screamStart:"Włącz mikrofon",screamHold:"Przytrzymaj i ryknij",screamHint:"Krzycz! Zwal wieżę.",micDenied:"Brak dostępu do mikrofonu – przytrzymaj przycisk, żeby ryknąć.",towers:"Wieże",
+screamStart:"Włącz mikrofon",screamHold:"Przytrzymaj i ryknij",screamHint:"Krzycz! Rozwal wieżę.",micDenied:"Brak dostępu do mikrofonu – przytrzymaj przycisk, żeby ryknąć.",towers:"Wieże",
 sl:["Szept","Burczenie","Krzyk","Sąsiad już dzwoni","Alarm sejsmiczny"],peak:"Rekord",
 crushPh:"Co cię doprowadza do szału? Napisz albo powiedz…",speak:"🎙️ Powiedz",stopRec:"⏹ Stop",recording:"Słucham…",voiceNote:"Notatka głosowa",crumple:"Zgnieć to!",needText:"Najpierw coś napisz albo powiedz.",whereTo:"Gdzie z tym?",
 dTrash:"Do kosza",dShred:"Do niszczarki",dRocket:"W kosmos",dGoat:"Nakarm kozę",gone:"Po sprawie. To już nie istnieje.",again:"Kolejny problem",notSaved:"Nic nie jest zapisywane. Znika na zawsze.",
@@ -79,17 +71,9 @@ coolTitle:"Wyciszenie",inhale:"Wdech…",exhale:"Wydech…",coolSub:"Robot sprz�
 resTitle:"Twój wynik",resDown:"Mniej o {n}. Dobra robota!",resSame:"Bez zmian. Może jeszcze jedna runda albo dłuższe wyciszenie?",resUp:"Więcej o {n}. Zdarza się! Spróbuj innego narzędzia albo dłuższego wyciszenia.",resOnly:"Jesteś teraz na {n}/10.",again2:"Jeszcze raz",
 settings:"Ustawienia",language:"Język",colours:"Kolory",sound:"Dźwięk",vibration:"Wibracje",history:"Historia",noHistory:"Jeszcze nie ma sesji.",avgDrop:"Średni spadek",sessions:"Sesje",clearHist:"Wyczyść historię",
 about:"O aplikacji",terms:"Regulamin i prywatność",support:"Postaw kawę",share:"Udostępnij",shareText:"Honicorn – spuść parę, bezpiecznie i absurdalnie.",linkCopied:"Link skopiowany!",
-meanOn:"Tryb mega wredny WŁĄCZONY 😈",meanOff:"Tryb miły 😇",meanWarn:"W trybie mega wrednym Honicorn będzie ci dogryzać. To wszystko żart – wyłączysz go w każdej chwili.",ok:"Dawaj",cancel:"Anuluj",motion:"📳 Włącz potrząsanie",
+meanOn:"Tryb mega wredny WŁĄCZONY 😈",meanOff:"Tryb miły 😇",meanWarn:"W trybie mega wrednym Honicorn będzie ci dogryzać. To wszystko żart – wyłączysz go w każdej chwili.",ok:"Dawaj",cancel:"Anuluj",motion:"📳 Włącz potrząsanie",commentsT:"Komentarze aplikacji",
 install:"📲 Zainstaluj aplikację",iosHint:"Na iPhonie: stuknij Udostępnij ⬆️, a potem „Do ekranu początkowego”.",menuHint:"Otwórz menu przeglądarki ⋮ i wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.",inAppHint:"Otwórz tę stronę w Chrome lub Safari, żeby ją zainstalować.",
 supportText:"Wszystko w Honicornie jest i zawsze będzie darmowe. Kawa to po prostu dobrowolne wsparcie procesu twórczego. ☕",
-r:{gen:["To wszystko, na co cię stać? Mój kalkulator wkurza się bardziej.","Przerażające. Chomik właśnie się z ciebie zaśmiał.","To ma być furia? Budyń bywa groźniejszy.","Dalej, dalej. Ekran nawet się nie boi.","Słodkie. A teraz na serio.","Gdzieś na świecie kotek jest groźniejszy od ciebie.","Mój ostatni restart miał więcej pasji.","Powolne oklaski. Bardzo powolne."],
-smash:["Talerz przeżył. Przynajmniej emocjonalnie.","Babcia tłucze więcej naczyń przypadkiem."],
-scream:["To był krzyk czy grzeczne kichnięcie?","Sąsiedzi nawet nie zauważyli. Znowu."],
-crush:["To jest ten wielki problem? Uroczo.","Nawet koza mówi, że to problemik."],
-volcano:["To nie wulkan, to ciepła kałuża.","Mocniej. To telefon, nie suflet."],
-bag:["Worek ziewa.","Bijesz go czy głaszczesz?"],
-insult:["Czytanie obelg z ekranu. Jakie odważne.","Głośniej. Nikt nie usłyszał."],
-idle:"Halo? Już się poddajesz?",down:"No proszę, spokój. Długo to trwało.",same:"Nic się nie zmieniło. Na swój sposób imponujące. Jeszcze raz?",up:"Złość ci wzrosła? Szczerze, to talent. Runda druga?"},
 info:`<h3>Dlaczego to działa</h3>
 <p><b>Nazwanie.</b> Napisanie albo powiedzenie, co cię wkurza, to coś więcej niż zabawa. Psycholodzy nazywają to <i>etykietowaniem emocji</i>: ubranie emocji w słowa zmniejsza jej siłę.</p>
 <p><b>Ruch.</b> Złość to energia w ciele. Krótka seria stukania, potrząsania i krzyku pozwala ją wypuścić – bez niszczenia prawdziwych rzeczy i bez krzywdzenia kogokolwiek.</p>
@@ -134,17 +118,9 @@ coolTitle:"Runterkommen",inhale:"Einatmen…",exhale:"Ausatmen…",coolSub:"Der 
 resTitle:"Dein Ergebnis",resDown:"{n} weniger. Gut gemacht!",resSame:"Gleiches Level. Noch eine Runde oder länger atmen?",resUp:"{n} mehr. Passiert! Probier ein anderes Werkzeug oder atme länger.",resOnly:"Du bist jetzt bei {n}/10.",again2:"Noch eine Runde",
 settings:"Einstellungen",language:"Sprache",colours:"Farben",sound:"Ton",vibration:"Vibration",history:"Verlauf",noHistory:"Noch keine Sitzungen.",avgDrop:"Ø Rückgang",sessions:"Sitzungen",clearHist:"Verlauf löschen",
 about:"Über die App",terms:"Nutzung & Datenschutz",support:"Kauf mir einen Kaffee",share:"Teilen",shareText:"Honicorn – Dampf ablassen, sicher und absurd.",linkCopied:"Link kopiert!",
-meanOn:"Mega-Fiesmodus AN 😈",meanOff:"Netter Modus 😇",meanWarn:"Im Mega-Fiesmodus zieht Honicorn dich auf. Alles nur Spaß – jederzeit abschaltbar.",ok:"Her damit",cancel:"Abbrechen",motion:"📳 Schütteln aktivieren",
+meanOn:"Mega-Fiesmodus AN 😈",meanOff:"Netter Modus 😇",meanWarn:"Im Mega-Fiesmodus zieht Honicorn dich auf. Alles nur Spaß – jederzeit abschaltbar.",ok:"Her damit",cancel:"Abbrechen",motion:"📳 Schütteln aktivieren",commentsT:"App-Kommentare",
 install:"📲 App installieren",iosHint:"Auf dem iPhone: Teilen ⬆️ tippen, dann „Zum Home-Bildschirm“.",menuHint:"Öffne das Browsermenü ⋮ und wähle „App installieren“ oder „Zum Startbildschirm hinzufügen“.",inAppHint:"Öffne diese Seite in Chrome oder Safari, um sie zu installieren.",
 supportText:"Alles in Honicorn ist und bleibt kostenlos. Ein Kaffee ist einfach freiwillige Unterstützung für den kreativen Prozess. ☕",
-r:{gen:["Ist das alles? Mein Taschenrechner wird wütender.","Furchterregend. Ein Hamster lacht dich gerade aus.","Das soll Wut sein? Pudding ist bedrohlicher.","Weiter so. Der Bildschirm hat nicht mal Angst.","Niedlich. Jetzt nochmal mit Gefühl.","Irgendwo ist ein Kätzchen einschüchternder als du.","Mein letzter Neustart hatte mehr Leidenschaft.","Langsames Klatschen. Sehr langsam."],
-smash:["Der Teller hat überlebt. Zumindest emotional.","Oma zerdeppert aus Versehen mehr Geschirr."],
-scream:["War das ein Schrei oder ein höfliches Niesen?","Die Nachbarn haben nichts gemerkt. Schon wieder."],
-crush:["Das ist dein großes Problem? Süß.","Sogar die Ziege sagt, das ist ein Problemchen."],
-volcano:["Das ist kein Vulkan, das ist eine warme Pfütze.","Fester schütteln. Das ist ein Handy, kein Soufflé."],
-bag:["Der Boxsack gähnt.","Boxt du ihn oder streichelst du ihn?"],
-insult:["Beleidigungen vom Bildschirm ablesen. Wie mutig.","Lauter. Das hat keiner gehört."],
-idle:"Hallo? Schon aufgegeben?",down:"Sieh an, ganz ruhig. Hat ja gedauert.",same:"Nichts hat sich geändert. Auf seine Art beeindruckend. Nochmal?",up:"Noch wütender? Ehrlich, das ist ein Talent. Runde zwei?"},
 info:`<h3>Warum es funktioniert</h3>
 <p><b>Benennen.</b> Aufzuschreiben oder auszusprechen, was dich wütend macht, ist mehr als ein Spiel. Psychologen nennen das <i>Affekt-Etikettierung</i>: Ein Gefühl in Worte zu fassen, schwächt es ab.</p>
 <p><b>Bewegen.</b> Wut ist Energie im Körper. Ein kurzer Ausbruch aus Tippen, Schütteln und Schreien lässt sie raus – ohne echte Dinge kaputt zu machen oder jemanden zu verletzen.</p>
@@ -189,17 +165,9 @@ coolTitle:"Calma",inhale:"Inspira…",exhale:"Espira…",coolSub:"El robot está
 resTitle:"Tu resultado",resDown:"{n} menos. ¡Bien hecho!",resSame:"Mismo nivel. ¿Otra ronda o una pausa más larga?",resUp:"{n} más. ¡Pasa! Prueba otra herramienta o una pausa más larga.",resOnly:"Ahora estás en {n}/10.",again2:"Otra ronda",
 settings:"Ajustes",language:"Idioma",colours:"Colores",sound:"Sonido",vibration:"Vibración",history:"Historial",noHistory:"Aún no hay sesiones.",avgDrop:"Bajada media",sessions:"Sesiones",clearHist:"Borrar historial",
 about:"Acerca de",terms:"Términos y privacidad",support:"Invítame a un café",share:"Compartir",shareText:"Honicorn – suelta vapor, seguro y absurdo.",linkCopied:"¡Enlace copiado!",
-meanOn:"Modo mega borde ACTIVADO 😈",meanOff:"Modo amable 😇",meanWarn:"En el modo mega borde, Honicorn se mete contigo. Todo es broma: puedes desactivarlo cuando quieras.",ok:"Adelante",cancel:"Cancelar",motion:"📳 Activar agitar",
+meanOn:"Modo mega borde ACTIVADO 😈",meanOff:"Modo amable 😇",meanWarn:"En el modo mega borde, Honicorn se mete contigo. Todo es broma: puedes desactivarlo cuando quieras.",ok:"Adelante",cancel:"Cancelar",motion:"📳 Activar agitar",commentsT:"Comentarios de la app",
 install:"📲 Instalar la app",iosHint:"En iPhone: toca Compartir ⬆️ y luego «Añadir a pantalla de inicio».",menuHint:"Abre el menú del navegador ⋮ y elige «Instalar app» o «Añadir a pantalla de inicio».",inAppHint:"Abre esta página en Chrome o Safari para instalarla.",
 supportText:"Todo en Honicorn es y seguirá siendo gratis. Un café es simplemente un apoyo voluntario al proceso creativo. ☕",
-r:{gen:["¿Eso es todo? Mi calculadora se enfada más.","Aterrador. Un hámster se acaba de reír de ti.","¿A eso llamas rabia? Un flan da más miedo.","Sigue así. La pantalla ni se inmuta.","Qué mono. Ahora hazlo en serio.","En algún lugar hay un gatito más intimidante que tú.","Mi último reinicio tuvo más pasión.","Aplauso lento. Muy lento."],
-smash:["El plato sobrevivió. Al menos emocionalmente.","Mi abuela rompe más platos sin querer."],
-scream:["¿Eso fue un grito o un estornudo educado?","Los vecinos ni se enteraron. Otra vez."],
-crush:["¿Ese es tu gran problema? Qué tierno.","Hasta la cabra dice que es un problemita."],
-volcano:["Eso no es un volcán, es un charco tibio.","Agita más fuerte. Es un móvil, no un suflé."],
-bag:["El saco está bostezando.","¿Lo golpeas o lo acaricias?"],
-insult:["Leer insultos de una pantalla. Qué valentía.","Más alto. Nadie lo oyó."],
-idle:"¿Hola? ¿Ya te rindes?",down:"Vaya, calma total. Ya era hora.",same:"Nada ha cambiado. Impresionante, a su manera. ¿Otra?",up:"¿Más rabia que antes? Sinceramente, es un talento. ¿Segunda ronda?"},
 info:`<h3>Por qué funciona</h3>
 <p><b>Ponerle nombre.</b> Escribir o decir lo que te enfada es más que un juego. Los psicólogos lo llaman <i>etiquetado afectivo</i>: poner una emoción en palabras reduce su intensidad.</p>
 <p><b>Moverlo.</b> La rabia es energía en el cuerpo. Una ráfaga corta de toques, sacudidas y gritos la deja salir, sin romper nada real ni hacer daño a nadie.</p>
@@ -244,17 +212,9 @@ coolTitle:"Retour au calme",inhale:"Inspire…",exhale:"Expire…",coolSub:"Le r
 resTitle:"Ton résultat",resDown:"{n} de moins. Bien joué !",resSame:"Même niveau. Encore un tour ou une pause plus longue ?",resUp:"{n} de plus. Ça arrive ! Essaie un autre outil ou une pause plus longue.",resOnly:"Tu es à {n}/10 maintenant.",again2:"Encore un tour",
 settings:"Réglages",language:"Langue",colours:"Couleurs",sound:"Son",vibration:"Vibration",history:"Historique",noHistory:"Pas encore de séances.",avgDrop:"Baisse moyenne",sessions:"Séances",clearHist:"Effacer l'historique",
 about:"À propos",terms:"Conditions et confidentialité",support:"Offre-moi un café",share:"Partager",shareText:"Honicorn – lâche la vapeur, sans danger et sans logique.",linkCopied:"Lien copié !",
-meanOn:"Mode méga méchant ACTIVÉ 😈",meanOff:"Mode gentil 😇",meanWarn:"En mode méga méchant, Honicorn te charrie. C'est pour rire – tu peux le couper à tout moment.",ok:"Vas-y",cancel:"Annuler",motion:"📳 Activer la secousse",
+meanOn:"Mode méga méchant ACTIVÉ 😈",meanOff:"Mode gentil 😇",meanWarn:"En mode méga méchant, Honicorn te charrie. C'est pour rire – tu peux le couper à tout moment.",ok:"Vas-y",cancel:"Annuler",motion:"📳 Activer la secousse",commentsT:"Commentaires de l'appli",
 install:"📲 Installer l'appli",iosHint:"Sur iPhone : touche Partager ⬆️, puis « Sur l'écran d'accueil ».",menuHint:"Ouvre le menu du navigateur ⋮ et choisis « Installer l'application » ou « Ajouter à l'écran d'accueil ».",inAppHint:"Ouvre cette page dans Chrome ou Safari pour l'installer.",
 supportText:"Tout dans Honicorn est et restera gratuit. Un café, c'est simplement un soutien volontaire au processus créatif. ☕",
-r:{gen:["C'est tout ? Ma calculatrice s'énerve plus que ça.","Terrifiant. Un hamster vient de se moquer de toi.","C'est ça, ta rage ? Un flan fait plus peur.","Continue. L'écran n'a même pas peur.","Mignon. Maintenant, pour de vrai.","Quelque part, un chaton est plus intimidant que toi.","Mon dernier redémarrage avait plus de passion.","Applaudissements lents. Très lents."],
-smash:["L'assiette a survécu. Émotionnellement, du moins.","Ma grand-mère casse plus de vaisselle sans faire exprès."],
-scream:["C'était un cri ou un éternuement poli ?","Les voisins n'ont rien remarqué. Encore."],
-crush:["C'est ça, ton gros problème ? Trop mignon.","Même la chèvre dit que c'est un petit problème."],
-volcano:["Ce n'est pas un volcan, c'est une flaque tiède.","Secoue plus fort. C'est un téléphone, pas un soufflé."],
-bag:["Le sac bâille.","Tu le frappes ou tu le caresses ?"],
-insult:["Lire des insultes sur un écran. Quel courage.","Plus fort. Personne n'a entendu."],
-idle:"Allô ? Tu abandonnes déjà ?",down:"Tiens, le calme. Il était temps.",same:"Rien n'a changé. Impressionnant, à sa manière. On recommence ?",up:"Encore plus en colère ? Franchement, c'est un talent. Deuxième round ?"},
 info:`<h3>Pourquoi ça marche</h3>
 <p><b>Le nommer.</b> Écrire ou dire ce qui t'énerve, c'est plus qu'un jeu. Les psychologues appellent ça l'<i>étiquetage affectif</i> : mettre des mots sur une émotion en réduit l'intensité.</p>
 <p><b>Le bouger.</b> La colère, c'est de l'énergie dans le corps. Une courte rafale de tapes, de secousses et de cris la laisse sortir – sans rien casser de réel ni blesser personne.</p>
@@ -299,17 +259,9 @@ coolTitle:"冷静一下",inhale:"吸气……",exhale:"呼气……",coolSub:"�
 resTitle:"你的结果",resDown:"降了 {n}。干得好！",resSame:"没变化。再来一轮，还是多呼吸一会儿？",resUp:"升了 {n}。很正常！试试别的工具或多呼吸一会儿。",resOnly:"你现在是 {n}/10。",again2:"再来一轮",
 settings:"设置",language:"语言",colours:"颜色",sound:"声音",vibration:"振动",history:"记录",noHistory:"还没有记录。",avgDrop:"平均下降",sessions:"次数",clearHist:"清除记录",
 about:"关于",terms:"条款与隐私",support:"请我喝咖啡",share:"分享",shareText:"Honicorn——安全又荒唐地释放怒气。",linkCopied:"链接已复制！",
-meanOn:"超级毒舌模式已开启 😈",meanOff:"友好模式 😇",meanWarn:"在超级毒舌模式下，Honicorn 会损你几句。全是玩笑——随时可以关闭。",ok:"来吧",cancel:"取消",motion:"📳 启用摇晃",
+meanOn:"超级毒舌模式已开启 😈",meanOff:"友好模式 😇",meanWarn:"在超级毒舌模式下，Honicorn 会损你几句。全是玩笑——随时可以关闭。",ok:"来吧",cancel:"取消",motion:"📳 启用摇晃",commentsT:"应用评论",
 install:"📲 安装应用",iosHint:"iPhone：点按分享 ⬆️，然后选择“添加到主屏幕”。",menuHint:"打开浏览器菜单 ⋮，选择“安装应用”或“添加到主屏幕”。",inAppHint:"请在 Chrome 或 Safari 中打开此页面进行安装。",
 supportText:"Honicorn 的一切现在和将来都是免费的。一杯咖啡只是对创作过程的自愿支持。☕",
-r:{gen:["就这？我的计算器都比你会生气。","好可怕哦。一只仓鼠刚刚笑话了你。","这叫愤怒？布丁都比你凶。","继续啊。屏幕一点都不怕。","真可爱。现在认真点。","世界上某处，一只小猫都比你有气势。","我上次重启都比这有激情。","慢慢鼓掌。非常慢。"],
-smash:["盘子活下来了，至少心理上是。","我奶奶不小心打碎的碗都比你多。"],
-scream:["这是尖叫还是礼貌的喷嚏？","邻居根本没注意到。又一次。"],
-crush:["这就是你的大问题？好可爱。","连山羊都说这是个小问题。"],
-volcano:["这不是火山，是一摊温水。","使劲摇。这是手机，不是舒芙蕾。"],
-bag:["沙袋在打哈欠。","你是在打它还是在摸它？"],
-insult:["照着屏幕念骂词。好勇敢。","大声点。没人听见。"],
-idle:"喂？这就放弃了？",down:"哟，冷静了。可真够久的。",same:"毫无变化。某种程度上挺厉害。再来？",up:"更生气了？说真的，这是天赋。第二轮？"},
 info:`<h3>为什么有效</h3>
 <p><b>说出来。</b>写下或说出让你生气的事，不只是好玩。心理学家称之为<i>情绪标注</i>：把情绪化为语言，会降低它的强度。</p>
 <p><b>动起来。</b>愤怒是身体里的能量。一阵点击、摇晃和喊叫能把它释放出来——不会弄坏真东西，也不会伤害任何人。</p>
@@ -354,17 +306,9 @@ coolTitle:"Заспокоєння",inhale:"Вдих…",exhale:"Видих…",c
 resTitle:"Твій результат",resDown:"Менше на {n}. Чудово!",resSame:"Без змін. Ще раунд чи довша пауза?",resUp:"Більше на {n}. Буває! Спробуй інший інструмент або довшу паузу.",resOnly:"Зараз у тебе {n}/10.",again2:"Ще раунд",
 settings:"Налаштування",language:"Мова",colours:"Кольори",sound:"Звук",vibration:"Вібрація",history:"Історія",noHistory:"Ще немає сесій.",avgDrop:"Середнє зниження",sessions:"Сесії",clearHist:"Очистити історію",
 about:"Про застосунок",terms:"Умови та приватність",support:"Пригости кавою",share:"Поділитися",shareText:"Honicorn – випусти пару, безпечно й абсурдно.",linkCopied:"Посилання скопійовано!",
-meanOn:"Мега-злий режим УВІМКНЕНО 😈",meanOff:"Добрий режим 😇",meanWarn:"У мега-злому режимі Honicorn з тебе кепкує. Це лише жарт – вимкнути можна будь-коли.",ok:"Давай",cancel:"Скасувати",motion:"📳 Увімкнути струшування",
+meanOn:"Мега-злий режим УВІМКНЕНО 😈",meanOff:"Добрий режим 😇",meanWarn:"У мега-злому режимі Honicorn з тебе кепкує. Це лише жарт – вимкнути можна будь-коли.",ok:"Давай",cancel:"Скасувати",motion:"📳 Увімкнути струшування",commentsT:"Коментарі застосунку",
 install:"📲 Встановити застосунок",iosHint:"На iPhone: торкнись «Поділитися» ⬆️, потім «На початковий екран».",menuHint:"Відкрий меню браузера ⋮ і вибери «Встановити застосунок» або «Додати на головний екран».",inAppHint:"Відкрий цю сторінку в Chrome або Safari, щоб установити її.",
 supportText:"Усе в Honicorn є і завжди буде безкоштовним. Кава – це просто добровільна підтримка творчого процесу. ☕",
-r:{gen:["Це все? Мій калькулятор злиться сильніше.","Страшно. Хом'як щойно з тебе посміявся.","Це лють? Пудинг і той грізніший.","Давай-давай. Екран навіть не боїться.","Мило. А тепер по-справжньому.","Десь у світі кошеня грізніше за тебе.","Мій останній перезапуск мав більше пристрасті.","Повільні оплески. Дуже повільні."],
-smash:["Тарілка вижила. Принаймні емоційно.","Бабуся випадково б'є більше посуду."],
-scream:["Це був крик чи ввічливе чхання?","Сусіди навіть не помітили. Знову."],
-crush:["Оце твоя велика проблема? Мило.","Навіть коза каже, що це проблемка."],
-volcano:["Це не вулкан, а тепла калюжа.","Струшуй сильніше. Це телефон, а не суфле."],
-bag:["Груша позіхає.","Ти її б'єш чи гладиш?"],
-insult:["Читати образи з екрана. Яка сміливість.","Голосніше. Ніхто не почув."],
-idle:"Агов? Вже здаєшся?",down:"Ну нарешті, спокій. Довгенько.",same:"Нічого не змінилося. По-своєму вражає. Ще раз?",up:"Злості стало більше? Чесно, це талант. Другий раунд?"},
 info:`<h3>Чому це працює</h3>
 <p><b>Назвати.</b> Написати або сказати, що тебе злить, – це більше, ніж гра. Психологи називають це <i>маркуванням емоцій</i>: коли вкладаєш емоцію в слова, вона слабшає.</p>
 <p><b>Рухатися.</b> Злість – це енергія в тілі. Коротка серія натискань, струшувань і крику випускає її назовні – без шкоди справжнім речам і людям.</p>
@@ -387,13 +331,13 @@ termsHtml:`<h3>Умови користування</h3>
 <p>Контакт: ${MAIL}</p>`}
 };
 
-/* Insult generator parts: adjective, noun, suffix */
+/* Insult generator parts: 20 adjectives × 20 nouns × 15 endings per language */
 const INS={
-en:{a:["burnt","rusty","half-baked","soggy","expired","deflated","crumpled","wobbly","overcooked","lukewarm"],n:["colander","cauliflower","slipper","toaster","dumpling","potato","vacuum cleaner","rubber duck","teaspoon","sock puppet"],s:["from the discount bin","with no batteries","from last Tuesday","on a bad hair day","without instructions","in a raincoat","from the bottom drawer","with hiccups"],f:(a,n,s)=>`You ${a} ${n} ${s}!`},
-pl:{a:["przypalony","zardzewiały","niedopieczony","rozmokły","przeterminowany","sflaczały","wymięty","chybotliwy","rozgotowany","letni"],n:["durszlaku","kalafiorze","kapciu","tosterze","pierogu","ziemniaku","odkurzaczu","widelcu","kaloryferze","budyniu"],s:["z promocji","bez baterii","z zeszłego wtorku","bez instrukcji","w przeciwdeszczowej pelerynie","z dolnej szuflady","z czkawką","z wyprzedaży"],f:(a,n,s)=>`Ty ${a} ${n} ${s}!`},
-de:{a:["verbrannter","rostiger","halbgarer","matschiger","abgelaufener","schlaffer","zerknitterter","wackeliger","verkochter","lauwarmer"],n:["Toaster","Blumenkohl","Pantoffel","Knödel","Staubsauger","Teelöffel","Kochlöffel","Heizkörper","Pudding","Zwieback"],s:["vom Wühltisch","ohne Batterien","von letztem Dienstag","ohne Anleitung","im Regenmantel","aus der untersten Schublade","mit Schluckauf","im Sonderangebot"],f:(a,n,s)=>`Du ${a} ${n} ${s}!`},
-es:{a:["quemado","oxidado","medio crudo","empapado","caducado","desinflado","arrugado","tambaleante","recocido","tibio"],n:["colador","tostador","calcetín","buñuelo","plumero","cucharón","radiador","flan","pepino","churro"],s:["de oferta","sin pilas","del martes pasado","sin instrucciones","con chubasquero","del último cajón","con hipo","de saldo"],f:(a,n,s)=>`¡So ${n} ${a} ${s}!`},
-fr:{a:["cramé","rouillé","mal cuit","ramolli","périmé","dégonflé","froissé","bancal","trop cuit","tiède"],n:["grille-pain","chou-fleur","chausson","aspirateur","croûton","radiateur","flan","cornichon","pruneau","tire-bouchon"],s:["en promo","sans piles","de mardi dernier","sans mode d'emploi","en imperméable","du fond du tiroir","qui a le hoquet","soldé"],f:(a,n,s)=>`Espèce de ${n} ${a} ${s} !`},
-zh:{a:["烤焦的","生锈的","半生不熟的","泡软的","过期的","泄了气的","皱巴巴的","摇摇晃晃的","煮过头的","温吞吞的"],n:["漏勺","花椰菜","拖鞋","烤面包机","饺子","土豆","吸尘器","橡皮鸭","茶匙","袜子木偶"],s:["打折区的","没装电池的","上周二的","没有说明书的","穿雨衣的","抽屉底下的","打着嗝的","清仓甩卖的"],f:(a,n,s)=>`你这个${s}${a}${n}！`},
-uk:{a:["підгорілий","іржавий","недопечений","розмоклий","прострочений","здутий","пом'ятий","хиткий","переварений","теплуватий"],n:["друшляку","тостере","капцю","варенику","пилососе","кабачку","вінику","радіаторе","пудингу","сухарику"],s:["з розпродажу","без батарейок","з минулого вівторка","без інструкції","у дощовику","з нижньої шухляди","з гикавкою","за акцією"],f:(a,n,s)=>`Ти ${a} ${n} ${s}!`}
+en:{a:["burnt", "rusty", "half-baked", "soggy", "expired", "deflated", "crumpled", "wobbly", "overcooked", "lukewarm", "squeaky", "mouldy", "sticky", "dented", "fluffy", "grumpy", "upside-down", "glittery", "overinflated", "forgotten"],n:["colander", "cauliflower", "slipper", "toaster", "dumpling", "potato", "vacuum cleaner", "rubber duck", "teaspoon", "sock puppet", "pickle", "doorknob", "waffle iron", "traffic cone", "flip-flop", "meatball", "garden gnome", "lampshade", "stapler", "jellyfish"],s:["from the discount bin", "with no batteries", "from last Tuesday", "on a bad hair day", "without instructions", "in a raincoat", "from the bottom drawer", "with hiccups", "on roller skates", "in a tutu", "from a gas station", "with a dramatic past", "in slow motion", "on a sugar rush", "with a participation trophy"],f:(a,n,s)=>`You ${a} ${n} ${s}!`},
+pl:{a:["przypalony", "zardzewiały", "niedopieczony", "rozmokły", "przeterminowany", "sflaczały", "wymięty", "chybotliwy", "rozgotowany", "letni", "skrzypiący", "spleśniały", "lepki", "wgnieciony", "puchaty", "zrzędliwy", "odwrócony do góry nogami", "brokatowy", "przepompowany", "zapomniany"],n:["durszlaku", "kalafiorze", "kapciu", "tosterze", "pierogu", "ziemniaku", "odkurzaczu", "widelcu", "kaloryferze", "budyniu", "ogórku", "mopie", "naleśniku", "pachołku", "klapku", "klopsiku", "krasnalu", "abażurze", "zszywaczu", "kisielu"],s:["z promocji", "bez baterii", "z zeszłego wtorku", "bez instrukcji", "w przeciwdeszczowej pelerynie", "z dolnej szuflady", "z czkawką", "na wrotkach", "w baletowej spódniczce", "ze stacji benzynowej", "z dramatyczną przeszłością", "w zwolnionym tempie", "na cukrowym haju", "z dyplomem za udział", "z wyprzedaży"],f:(a,n,s)=>`Ty ${a} ${n} ${s}!`},
+de:{a:["verbrannter", "rostiger", "halbgarer", "matschiger", "abgelaufener", "schlaffer", "zerknitterter", "wackeliger", "verkochter", "lauwarmer", "quietschender", "schimmeliger", "klebriger", "verbeulter", "flauschiger", "grummeliger", "kopfstehender", "glitzernder", "aufgeblasener", "vergessener"],n:["Toaster", "Blumenkohl", "Pantoffel", "Knödel", "Staubsauger", "Teelöffel", "Kochlöffel", "Heizkörper", "Pudding", "Zwieback", "Türknauf", "Leitkegel", "Badelatschen", "Fleischklops", "Gartenzwerg", "Lampenschirm", "Tacker", "Schwamm", "Kaktus", "Quirl"],s:["vom Wühltisch", "ohne Batterien", "von letztem Dienstag", "ohne Anleitung", "im Regenmantel", "aus der untersten Schublade", "mit Schluckauf", "auf Rollschuhen", "im Tutu", "von der Tankstelle", "mit dramatischer Vergangenheit", "in Zeitlupe", "im Zuckerrausch", "mit Teilnehmerurkunde", "im Sonderangebot"],f:(a,n,s)=>`Du ${a} ${n} ${s}!`},
+es:{a:["quemado", "oxidado", "medio crudo", "empapado", "caducado", "desinflado", "arrugado", "tambaleante", "recocido", "tibio", "chirriante", "mohoso", "pegajoso", "abollado", "esponjoso", "gruñón", "del revés", "brillante", "hinchado", "olvidado"],n:["colador", "tostador", "calcetín", "buñuelo", "plumero", "cucharón", "radiador", "flan", "pepino", "churro", "pomo", "cono", "mocasín", "pimiento", "gnomo", "flexo", "sacapuntas", "pulpo", "cactus", "ladrillo"],s:["de oferta", "sin pilas", "del martes pasado", "sin instrucciones", "con chubasquero", "del último cajón", "con hipo", "en patines", "con tutú", "de gasolinera", "con un pasado dramático", "a cámara lenta", "con subidón de azúcar", "con diploma de participación", "de saldo"],f:(a,n,s)=>`¡So ${n} ${a} ${s}!`},
+fr:{a:["cramé", "rouillé", "mal cuit", "ramolli", "périmé", "dégonflé", "froissé", "bancal", "trop cuit", "tiède", "grinçant", "moisi", "collant", "cabossé", "duveteux", "grognon", "à l'envers", "pailleté", "surgonflé", "oublié"],n:["grille-pain", "chou-fleur", "chausson", "aspirateur", "croûton", "radiateur", "flan", "cornichon", "pruneau", "tire-bouchon", "plot", "nain de jardin", "abat-jour", "trombone", "cactus", "poireau", "navet", "pudding", "gaufrier", "ravioli"],s:["en promo", "sans piles", "de mardi dernier", "sans mode d'emploi", "en imperméable", "du fond du tiroir", "qui a le hoquet", "en rollers", "en tutu", "de station-service", "au passé dramatique", "au ralenti", "sous sucre", "avec un diplôme de participation", "soldé"],f:(a,n,s)=>`Espèce de ${n} ${a} ${s} !`},
+zh:{a:["烤焦的", "生锈的", "半生不熟的", "泡软的", "过期的", "泄了气的", "皱巴巴的", "摇摇晃晃的", "煮过头的", "温吞吞的", "吱吱作响的", "发霉的", "黏糊糊的", "凹了一块的", "毛茸茸的", "爱发牢骚的", "倒立着的", "亮闪闪的", "吹得太鼓的", "被遗忘的"],n:["漏勺", "花椰菜", "拖鞋", "烤面包机", "饺子", "土豆", "吸尘器", "橡皮鸭", "茶匙", "袜子木偶", "酸黄瓜", "门把手", "华夫饼机", "路障锥", "人字拖", "肉丸", "花园小矮人", "灯罩", "订书机", "水母"],s:["打折区的", "没装电池的", "上周二的", "没有说明书的", "穿雨衣的", "抽屉底下的", "打着嗝的", "穿溜冰鞋的", "穿芭蕾短裙的", "加油站买的", "有着悲惨过去的", "慢动作的", "吃糖吃嗨了的", "只拿过参与奖的", "清仓甩卖的"],f:(a,n,s)=>`你这个${s}${a}${n}！`},
+uk:{a:["підгорілий", "іржавий", "недопечений", "розмоклий", "прострочений", "здутий", "пом'ятий", "хиткий", "переварений", "теплуватий", "скрипучий", "запліснявілий", "липкий", "погнутий", "пухнастий", "буркотливий", "перевернутий", "блискучий", "перекачаний", "забутий"],n:["друшляку", "тостере", "капцю", "варенику", "пилососе", "кабачку", "вінику", "радіаторе", "пудингу", "сухарику", "огірку", "ополонику", "конусе", "шльопанцю", "голубцю", "гноме", "абажуре", "степлере", "кактусе", "чайнику"],s:["з розпродажу", "без батарейок", "з минулого вівторка", "без інструкції", "у дощовику", "з нижньої шухляди", "з гикавкою", "на роликах", "у балетній пачці", "з заправки", "з драматичним минулим", "у сповільненій зйомці", "на цукровому драйві", "з грамотою за участь", "за акцією"],f:(a,n,s)=>`Ти ${a} ${n} ${s}!`}
 };

@@ -120,7 +120,7 @@ textarea:focus{outline:2px solid var(--a2)}
 .hist li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
 .prose h3{margin:20px 0 6px;color:var(--a3)}.prose p{margin:8px 0;color:var(--tx)}.prose a{color:var(--a2)}
 /* overlays */
-#roast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,160%);width:min(92vw,520px);display:flex;gap:10px;align-items:center;background:#1a1020;border:2px solid var(--a1);border-radius:18px;padding:12px 14px;z-index:50;transition:transform .35s cubic-bezier(.2,1.4,.4,1);box-shadow:0 10px 40px -8px var(--a1)}
+#roast{position:fixed;left:50%;top:calc(var(--hh) + 8px + env(safe-area-inset-top));pointer-events:none;transform:translate(-50%,-180%);width:min(92vw,520px);display:flex;gap:10px;align-items:center;background:#1a1020;border:2px solid var(--a1);border-radius:18px;padding:12px 14px;z-index:50;transition:transform .35s cubic-bezier(.2,1.4,.4,1);box-shadow:0 10px 40px -8px var(--a1)}
 #roast.on{transform:translate(-50%,0)}
 #roast .av{font-size:30px}
 #roast span{font-weight:600}
@@ -129,6 +129,23 @@ textarea:focus{outline:2px solid var(--a2)}
 #modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:70;padding:20px}
 #modal .box{background:var(--card);border:2px solid var(--a1);border-radius:22px;padding:22px;max-width:420px;text-align:center}
 #modal .box .big{font-size:54px}
+#roast.nice{border-color:var(--a2);box-shadow:0 10px 40px -8px var(--a2)}
+.resCom{text-align:center;font-size:16px;margin:4px 0 8px;padding:10px 14px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.resCom.mean{border-color:var(--a1)}.resCom.nice{border-color:var(--a2)}
+.space{position:absolute;inset:0;z-index:6;overflow:hidden;opacity:0;background:radial-gradient(120% 90% at 50% 100%,#1b2a6b 0,#0b0f2a 45%,#05060f 100%)}
+.star{position:absolute;border-radius:50%;background:#fff;animation:tw 1.6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25}to{opacity:1}}
+.craft{position:absolute;left:0;top:0;width:60px;height:60px;z-index:3}
+.craft .cr{position:absolute;left:8px;top:8px;font-size:44px;line-height:1}
+.craft .cf{position:absolute;left:-6px;top:38px;font-size:22px;line-height:1;transform:rotate(225deg);animation:fl .12s infinite alternate}
+@keyframes fl{to{transform:rotate(225deg) scale(1.35)}}
+.ball.mini{width:26px;height:26px;margin:0;left:38px;top:-6px;position:absolute}
+.space>.ball.mini{z-index:3}
+.boomflash{position:absolute;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#fff 0,#ffe066 25%,#ff7a3a 50%,rgba(255,80,40,0) 70%);z-index:4;pointer-events:none}
+.shock{position:absolute;width:80px;height:80px;border-radius:50%;border:3px solid rgba(255,255,255,.8);z-index:4;pointer-events:none}
+.frag{position:absolute;border-radius:2px;z-index:4;pointer-events:none}
+.boomTxt{font-size:44px;font-weight:900;color:#ffe066;text-shadow:0 0 18px #ff5a36,0 3px 0 #b3261e;z-index:5;white-space:nowrap}
+.poo{filter:drop-shadow(0 0 14px rgba(255,210,80,.9));z-index:3}
 #flash{position:fixed;inset:0;background:var(--a3);opacity:0;pointer-events:none;z-index:40}
 </style>
 </head>
@@ -227,6 +244,7 @@ textarea:focus{outline:2px solid var(--a2)}
   <h2 class="center" data-i18n="resTitle"></h2>
   <div class="resNums" id="resNums"></div>
   <p id="resMsg"></p>
+  <p id="resCom" class="resCom" hidden></p>
   <button id="resAgain" class="btn big hot" data-i18n="again2"></button>
   <button class="btn big ghost" data-go="home" data-i18n="home"></button>
 </section>
@@ -238,6 +256,7 @@ textarea:focus{outline:2px solid var(--a2)}
   <div class="set">
     <label class="tg"><span data-i18n="sound"></span><input type="checkbox" id="sndT"></label>
     <label class="tg"><span data-i18n="vibration"></span><input type="checkbox" id="vibT"></label>
+    <label class="tg"><span data-i18n="commentsT"></span><input type="checkbox" id="comT"></label>
   </div>
   <button class="btn big ghost" data-go="history" data-i18n="history"></button>
   <nav class="foot"><button data-go="info" data-i18n="about"></button><button data-go="terms" data-i18n="terms"></button><button data-go="support">☕ <span data-i18n="support"></span></button></nav>
@@ -265,7 +284,8 @@ textarea:focus{outline:2px solid var(--a2)}
 <div id="flash"></div>
 <div id="modal" hidden><div class="box"><div class="big">😈</div><p id="modalTxt" style="font-size:17px"></p><div class="row" style="justify-content:center"><button id="modalNo" class="btn ghost" data-i18n="cancel"></button><button id="modalOk" class="btn hot" data-i18n="ok"></button></div></div></div>
 
-<script src="i18n.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="i18n.js?v=4"></script>
+<script src="comments.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
