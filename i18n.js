@@ -341,3 +341,60 @@ fr:{a:["cramé", "rouillé", "mal cuit", "ramolli", "périmé", "dégonflé", "f
 zh:{a:["烤焦的", "生锈的", "半生不熟的", "泡软的", "过期的", "泄了气的", "皱巴巴的", "摇摇晃晃的", "煮过头的", "温吞吞的", "吱吱作响的", "发霉的", "黏糊糊的", "凹了一块的", "毛茸茸的", "爱发牢骚的", "倒立着的", "亮闪闪的", "吹得太鼓的", "被遗忘的"],n:["漏勺", "花椰菜", "拖鞋", "烤面包机", "饺子", "土豆", "吸尘器", "橡皮鸭", "茶匙", "袜子木偶", "酸黄瓜", "门把手", "华夫饼机", "路障锥", "人字拖", "肉丸", "花园小矮人", "灯罩", "订书机", "水母"],s:["打折区的", "没装电池的", "上周二的", "没有说明书的", "穿雨衣的", "抽屉底下的", "打着嗝的", "穿溜冰鞋的", "穿芭蕾短裙的", "加油站买的", "有着悲惨过去的", "慢动作的", "吃糖吃嗨了的", "只拿过参与奖的", "清仓甩卖的"],f:(a,n,s)=>`你这个${s}${a}${n}！`},
 uk:{a:["підгорілий", "іржавий", "недопечений", "розмоклий", "прострочений", "здутий", "пом'ятий", "хиткий", "переварений", "теплуватий", "скрипучий", "запліснявілий", "липкий", "погнутий", "пухнастий", "буркотливий", "перевернутий", "блискучий", "перекачаний", "забутий"],n:["друшляку", "тостере", "капцю", "варенику", "пилососе", "кабачку", "вінику", "радіаторе", "пудингу", "сухарику", "огірку", "ополонику", "конусе", "шльопанцю", "голубцю", "гноме", "абажуре", "степлере", "кактусе", "чайнику"],s:["з розпродажу", "без батарейок", "з минулого вівторка", "без інструкції", "у дощовику", "з нижньої шухляди", "з гикавкою", "на роликах", "у балетній пачці", "з заправки", "з драматичним минулим", "у сповільненій зйомці", "на цукровому драйві", "з грамотою за участь", "за акцією"],f:(a,n,s)=>`Ти ${a} ${n} ${s}!`}
 };
+
+/* Latviešu valoda (lv) */
+I18N.lv={
+tagline:"Nolaid tvaiku. Droši. Absurdi.",start:"Es vāros! Aiziet",tools:"Izvēlies ieroci",
+t_smash:"Dusmu istaba",d_smash:"Sasit šķīvjus, vāzes un biroja printeri.",
+t_scream:"Kliedzienmērs",d_scream:"Kliedz mikrofonā un apgāz torni.",
+t_crush:"Problēmu smalcinātājs",d_crush:"Uzraksti vai pasaki, kas tevi kaitina. Tad iznīcini to.",
+t_insult:"Lamu ģenerators",d_insult:"Absurdi lamuvārdi, ko uzkliegt Visumam.",
+t_volcano:"Vulkāns",d_volcano:"Krati, līdz tas izvirst.",
+t_bag:"Boksa maiss",d_bag:"Tam ir seja. Augstprātīga.",
+meterTitle:"Dusmu mērītājs",meterBefore:"Cik dusmīgs tu esi tieši tagad?",meterAfter:"Un kā ir tagad?",
+lv:["Mierā","Aizkaitināts","Dusmīgs","Niknumā","Vulkāna režīms"],next:"Tālāk",
+done:"Gatavs – atvēsini mani",back:"Rīki",home:"Sākums",atStart:"Sākuma līmenis",
+smashHint:"Pieskaries, lai sasistu. Var arī kratīt.",destroyed:"Sasists",
+screamStart:"Ieslēgt mikrofonu",screamHold:"Turi, lai rēktu",screamHint:"Kliedz! Apgāz torni.",micDenied:"Nav piekļuves mikrofonam – tā vietā turi pogu, lai rēktu.",towers:"Torņi",
+sl:["Čuksts","Burkšķis","Kliedziens","Kaimiņš zvana","Seismiskā trauksme"],peak:"Rekords",
+crushPh:"Kas tevi dzen trakumā? Uzraksti vai pasaki…",speak:"🎙️ Pasaki",stopRec:"⏹ Stop",recording:"Klausos…",voiceNote:"Balss ieraksts",crumple:"Saburzi to!",needText:"Vispirms kaut ko uzraksti vai pasaki.",whereTo:"Kur to sūtīt?",
+dTrash:"Miskaste",dShred:"Smalcinātājs",dRocket:"Kosmosā",dGoat:"Pabarot kazu",gone:"Pazudis. Tas vairs neeksistē.",again:"Vēl viena problēma",notSaved:"Nekas netiek saglabāts. Tas pazūd uz visiem laikiem.",
+insAnother:"Vēl vienu",insShout:"🎙️ Uzkliedz!",insCopy:"Kopēt",copied:"Nokopēts!",insHint:"Uzkliedz to kādam iedomātam. Pieskaries 🎙️ un kliedz – es izmērīšu spriedzi.",shoutNow:"Kliedz tagad! 🔴",tension:"Balss spriedze",tl:["Čiepstiens","Murmulis","Burkšķis","Kārtīgs kliedziens","Pērkons"],
+volHint:"Bungo kā traks vai krati tālruni!",pressure:"Spiediens",eruptions:"Izvirdumi",
+bagHint:"Sit to. Tas to ir pelnījis.",hits:"Sitieni",power:"Spēks",
+coolTitle:"Atvēsināšanās",inhale:"Ieelpo…",exhale:"Izelpo…",coolSub:"Robots uzkopj tavu jucekli. Tu tikai elpo.",skip:"Izlaist",meanPaused:"Ļaunais režīms pauzē. Pat es cienu elpošanu.",
+resTitle:"Tavs rezultāts",resDown:"Mazāk par {n}. Labi padarīts!",resSame:"Tas pats līmenis. Vēl vienu kārtu vai garāku atelpu?",resUp:"Vairāk par {n}. Gadās! Izmēģini citu rīku vai garāku atelpu.",resOnly:"Tagad tev ir {n}/10.",again2:"Vēl viena kārta",
+settings:"Iestatījumi",language:"Valoda",colours:"Krāsas",sound:"Skaņa",vibration:"Vibrācija",history:"Vēsture",noHistory:"Vēl nav sesiju.",avgDrop:"Vidējais kritums",sessions:"Sesijas",clearHist:"Notīrīt vēsturi",
+about:"Par lietotni",terms:"Noteikumi un privātums",support:"Uzsauc man kafiju",share:"Kopīgot",shareText:"Honicorn – nolaid tvaiku droši un absurdi.",
+linkCopied:"Saite nokopēta!",meanOn:"Mega ļaunais režīms IESLĒGTS 😈",meanOff:"Jaukais režīms 😇",
+meanWarn:"Mega ļaunajā režīmā Honicorn tevi ķircina. Tas viss ir joks – vari to izslēgt jebkurā brīdī.",ok:"Nāc šurp",cancel:"Atcelt",
+motion:"📳 Ieslēgt kratīšanu",commentsT:"Lietotnes komentāri",install:"📲 Instalēt lietotni",
+iosHint:"iPhone: pieskaries “Kopīgot” ⬆️, tad “Pievienot sākuma ekrānam”.",
+menuHint:"Atver pārlūka izvēlni ⋮ un izvēlies “Instalēt lietotni” vai “Pievienot sākuma ekrānam”.",
+inAppHint:"Atver šo lapu pārlūkā Chrome vai Safari, lai to instalētu.",
+supportText:"Viss Honicorn ir un paliks bez maksas. Kafija ir vienkārši brīvprātīgs atbalsts radošajam procesam. ☕",
+info:`<h3>Kāpēc tas darbojas</h3>
+<p><b>Nosaukt to.</b> Uzrakstīt vai pateikt, kas tevi sadusmo, ir vairāk nekā spēle. Psihologi to sauc par <i>emociju nosaukšanu</i> (affect labelling): ietērpjot emociju vārdos, tās intensitāte mazinās.</p>
+<p><b>Izkustināt to.</b> Dusmas ir enerģija tavā ķermenī. Īss bungošanas, kratīšanas un kliegšanas uzliesmojums to izlaiž – nesasitot neko īstu un nevienam nenodarot pāri.</p>
+<p><b>Pasmieties par to.</b> Grūti palikt niknumā, kamēr kaza ēd tavu problēmu. Humors pārrauj dusmu loku.</p>
+<p><b>Maiga piezemēšanās.</b> Tikai izkliegšanās var dusmas uzturēt, tāpēc katra sesija beidzas ar lēnu elpošanu un pārbaudi dusmu mērītājā. Vispirms sprādziens, tad izelpa.</p>
+<h3>Kam tā ir domāta</h3>
+<p>Ikvienam, kam ir viena no tām dienām: pēc briesmīgas sapulces, sastrēgumā, pēc strīda ar printeri vai telefona zvana, ko labāk aizmirst. Diagnoze nav vajadzīga.</p>
+<h3>Der zināt</h3>
+<p>Honicorn ir izklaides rīks, nevis terapija. Ja dusmas bieži ņem virsroku vai jūti, ka varētu nodarīt pāri sev vai kādam citam, lūdzu, aprunājies ar ārstu, psihologu vai kādu, kam uzticies.</p>
+<p>Mega ļaunais režīms 😈 ķircina tikai tavas dusmu prasmes – nekad ne to, kas tu esi.</p>`,
+termsHtml:`<h3>Lietošanas noteikumi</h3>
+<p>Honicorn ir bez maksas. Tā tiek nodrošināta “tāda, kāda ir”, izklaidei un atslodzei, un nav medicīnisks vai psiholoģisks rīks.</p>
+<p>Sišanu un kratīšanu veic droši: turi tālruni stingri un pievērs uzmanību apkārtnei.</p>
+<h3>Privātums</h3>
+<p>Bez konta, bez reklāmām, bez izsekošanas. Tavi iestatījumi un dusmu mērītāja vēsture glabājas tikai tavā ierīcē, un tos vari izdzēst Iestatījumos.</p>
+<p>Mikrofons tiek izmantots tikai tiešraidē, lai kliedzienmērā izmērītu skaļumu – nekas netiek ierakstīts vai sūtīts. Balss ieraksti problēmu smalcinātājā paliek tālruņa atmiņā un tiek izdzēsti, kad tos iznīcini.</p>
+<p>Runas pārvēršana tekstā (“Pasaki”) izmanto pārlūka iebūvēto runas pakalpojumu, kas var sūtīt audio tā nodrošinātājam (piemēram, Google pārlūkā Chrome). Ja vēlies, vienkārši raksti.</p>
+<h3>Autortiesības</h3>
+<p>© 2026 Piotr Żondełek. Visas tiesības aizsargātas. Lietotni vai tās daļas bez rakstiskas atļaujas kopēt, mainīt vai izplatīt nav atļauts.</p>
+<p>Kontakti: ${MAIL}</p>`
+};
+INS.lv={a:["piedegušais","sarūsējušais","pusceptais","izmirkušais","termiņu pārsniegušais","saplakušais","saburzītais","ļodzīgais","pārvārītais","remdenais","čīkstošais","sapelējušais","lipīgais","iebuktētais","pūkainais","īgnais","otrādi apgrieztais","spīguļotais","pārpūstais","aizmirstais"],
+n:["caurduris","ziedkāposts","tosteris","pelmenis","kartupelis","putekļu sūcējs","gumijas pīlēns","gurķis","durvju rokturis","satiksmes konuss","dārza rūķis","abažūrs","skavotājs","trauku sūklis","čemodāns","radiators","grābeklis","ķīselis","pudiņš","plācenis"],
+s:["no atlaižu groza","bez baterijām","no pagājušās otrdienas","sliktu matu dienā","bez lietošanas instrukcijas","lietusmētelī","no apakšējās atvilktnes","ar žagām","uz skrituļslidām","baleta svārciņos","no degvielas uzpildes stacijas","ar dramatisku pagātni","palēninājumā","cukura reibumā","ar diplomu par piedalīšanos"],
+f:(a,n,s)=>`Tu ${a} ${n} ${s}!`};

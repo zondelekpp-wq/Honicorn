@@ -109,6 +109,7 @@ textarea:focus{outline:2px solid var(--a2)}
 .set{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
 .set h3{font-size:15px;color:var(--mut);margin-bottom:10px;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+.famApp{display:flex;align-items:center;gap:12px}.famApp a.btn,#famHub{text-decoration:none}.famApp img{border-radius:12px;flex:none}.famTx{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
 .chips button{padding:8px 12px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
 .chips button.on{background:var(--a2);color:#10131a;font-weight:700;border-color:transparent}
 .sw{display:flex;gap:6px;padding:6px;border-radius:14px;border:2px solid transparent;background:var(--bg2)}
@@ -261,9 +262,17 @@ textarea:focus{outline:2px solid var(--a2)}
     <label class="tg"><span data-i18n="commentsT"></span><input type="checkbox" id="comT"></label>
   </div>
   <button class="btn big ghost" data-go="history" data-i18n="history"></button>
+  <button class="btn big ghost" data-go="family">🍁 <span id="famBtn">PaKu family</span></button>
   <nav class="foot"><button data-go="info" data-i18n="about"></button><button data-go="terms" data-i18n="terms"></button><button data-go="support">☕ <span data-i18n="support"></span></button></nav>
 </section>
 
+<section id="family" class="screen">
+  <h2 id="famTitle">PaKu family</h2>
+  <p class="mut" id="famD"></p>
+  <div id="famList"></div>
+  <a class="btn big ghost" id="famHub" href="https://zondelekpp-wq.github.io/PaKuFamily/">All PaKu apps</a>
+  <button class="btn big ghost" data-go="settings" data-i18n="settings"></button>
+</section>
 <section id="history" class="screen">
   <h2 data-i18n="history"></h2>
   <div id="histSum" class="chip"></div>
@@ -286,8 +295,9 @@ textarea:focus{outline:2px solid var(--a2)}
 <div id="flash"></div>
 <div id="modal" hidden><div class="box"><div class="big">😈</div><p id="modalTxt" style="font-size:17px"></p><div class="row" style="justify-content:center"><button id="modalNo" class="btn ghost" data-i18n="cancel"></button><button id="modalOk" class="btn hot" data-i18n="ok"></button></div></div></div>
 
-<script src="i18n.js?v=5"></script>
-<script src="comments.js?v=5"></script>
-<script src="app.js?v=5"></script>
+<script src="family.js?v=6"></script>
+<script src="i18n.js?v=6"></script>
+<script src="comments.js?v=6"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

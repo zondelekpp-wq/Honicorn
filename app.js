@@ -1,8 +1,8 @@
 /* Honicorn – © 2026 Piotr Żondełek. All rights reserved. */
 'use strict';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const LANGS=[['en','English'],['pl','Polski'],['de','Deutsch'],['es','Español'],['fr','Français'],['zh','中文'],['uk','Українська']];
-const SPEECH={en:'en-US',pl:'pl-PL',de:'de-DE',es:'es-ES',fr:'fr-FR',zh:'zh-CN',uk:'uk-UA'};
+const LANGS=[['en','English'],['pl','Polski'],['de','Deutsch'],['es','Español'],['fr','Français'],['zh','中文'],['uk','Українська'],['lv','Latviešu']];
+const SPEECH={en:'en-US',pl:'pl-PL',de:'de-DE',es:'es-ES',fr:'fr-FR',zh:'zh-CN',uk:'uk-UA',lv:'lv-LV'};
 const PALETTES={
  plum:{bg:'#1e1533',bg2:'#2b1f47',card:'#362a55',line:'#4a3b6e',tx:'#f7f0fb',mut:'#bfb2d6',a1:'#ff6b5b',a2:'#26c6b0',a3:'#ffb347',a4:'#a77bf3'},
  ocean:{bg:'#0f1d2e',bg2:'#16293f',card:'#1d3450',line:'#2c4766',tx:'#eef6ff',mut:'#a9bfd6',a1:'#ff7a45',a2:'#2ec5e0',a3:'#ffd166',a4:'#7b8cff'},
@@ -35,7 +35,15 @@ function applyI18n(){
   $$('#langs button').forEach(b=>b.onclick=()=>{S.lang=b.dataset.l;save();applyI18n();Crush.mic();});
   Crush.mic();updMeter();
   if(cur==='history')renderHist();
+  renderFamily();
 }
+/* ---------- PaKu family: Honicorn works alone; this screen only shows the other family apps ---------- */
+function renderFamily(){const F=window.PaKuFamily,b=$('#famBtn');if(!F){if(b)b.closest('button').hidden=true;return}
+  const l=S.lang,e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  if(b)b.textContent=F.t('fam_title',l);$('#famTitle').textContent=F.t('fam_title',l);$('#famD').textContent=F.t('fam_d',l);
+  $('#famList').innerHTML=F.all().map(a=>{const me=a.id==='honicorn',u=F.used(a.id);
+    return `<div class="set famApp"><img src="${e(F.icon(a))}" alt="" width="44" height="44" onerror="this.style.visibility='hidden'"><div class="famTx"><b>${e(a.name)}</b><small class="mut">${me?e(F.t('fam_this',l)):(u?e(F.t('fam_used',l))+' · ':'')+e(F.desc(a,l))}</small></div>${me?'':`<a class="btn sm" href="${e(F.url(a))}">${e(F.t(u?'fam_open':'fam_get',l))}</a>`}</div>`}).join('');
+  const h=$('#famHub');h.href=F.hub;h.textContent=F.t('fam_hub',l)}
 function applyPal(){P=PALETTES[S.pal]||PALETTES.plum;const r=document.documentElement.style;for(const k in P)r.setProperty('--'+k,P[k]);
   document.querySelector('meta[name=theme-color]').content=P.bg;
   $('#pals').innerHTML=Object.keys(PALETTES).map(k=>{const p=PALETTES[k];return `<button class="sw ${k===S.pal?'on':''}" data-p="${k}" aria-label="${k}" style="background:${p.bg}"><i style="background:${p.a1}"></i><i style="background:${p.a2}"></i><i style="background:${p.a3}"></i><i style="background:${p.a4}"></i></button>`}).join('');
@@ -111,6 +119,7 @@ function show(id){
   $('#roast').classList.remove('on');
   if(id==='home')updChip();
   if(id==='history')renderHist();
+  if(id==='family'){renderFamily();const F=window.PaKuFamily;if(F){F.detect().then(renderFamily);F.refresh()}}
   if(TOOLS[id]){curTool=id;session.tools.add(id);poke();requestAnimationFrame(()=>TOOLS[id].start());setTimeout(()=>{if(curTool===id)comment('gen',.6)},1800)}
   if(id==='cool')Cool.start();
 }
